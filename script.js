@@ -73,6 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
         calculationMethodSelect.value = savedMethod;
     }
 
+    // Start time display immediately (even without city)
+    updateCurrentTime();
+    currentTimeInterval = setInterval(updateCurrentTime, 1000);
+
     // Try to load saved city from localStorage
     const savedCity = localStorage.getItem('prayerTimesCity');
     if (savedCity) {
