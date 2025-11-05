@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prayer Times</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background decorative elements -->
+    <div class="bg-decoration">
+        <div class="bg-circle circle-1"></div>
+        <div class="bg-circle circle-2"></div>
+        <div class="bg-circle circle-3"></div>
+        <div class="bg-circle circle-4"></div>
+        <div class="bg-crescent crescent-1">🌙</div>
+        <div class="bg-star star-1">✦</div>
+        <div class="bg-star star-2">✦</div>
+        <div class="bg-star star-3">✦</div>
+        <div class="bg-star star-4">✦</div>
+        <div class="bg-star star-5">✦</div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <h1>🕌 Prayer Times</h1>
+                <button id="darkModeToggle" class="dark-mode-toggle" title="Toggle dark mode">🌙</button>
+            </div>
+        </header>
+
+        <div class="compact-header">
+            <div class="time-location-row">
+                <div class="current-time">
+                    <span id="currentTimeDisplay">--:--:--</span>
+                </div>
+                <div class="city-selector-compact">
+                    <div class="city-input-wrapper">
+                        <input type="text" id="cityInput" placeholder="City name" autocomplete="off">
+                        <div id="citySuggestions" class="city-suggestions hidden"></div>
+                    </div>
+                    <button id="searchBtn" class="icon-btn">🔍</button>
+                    <button id="locationBtn" class="icon-btn" title="Use current location">📍</button>
+                </div>
+            </div>
+            <div class="hijri-date-compact">
+                <span id="hijriDate"></span>
+            </div>
+        </div>
+
+        <div class="settings-compact">
+            <select id="calculationMethod">
+                <option value="2">Muslim World League</option>
+                <option value="1">Hanafi</option>
+                <option value="3">Egyptian</option>
+                <option value="4">Umm al-Qura</option>
+                <option value="5">ISNA</option>
+            </select>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+
+        <div id="error" class="error hidden"></div>
+
+        <div id="prayerTimes" class="prayer-times hidden">
+            <div class="location-title" id="locationTitle">
+                <h2 id="locationName" class="clickable-city"></h2>
+            </div>
+
+            <div class="next-prayer-compact">
+                <div class="next-prayer-label">Next Prayer</div>
+                <div class="next-prayer-info-compact">
+                    <span id="nextPrayerName" class="prayer-name-compact"></span>
+                    <span id="nextPrayerTime" class="countdown-compact"></span>
+                </div>
+            </div>
+
+            <div class="last-third-compact">
+                <span class="label">Last Third:</span>
+                <span id="lastThirdTime" class="time-display-compact"></span>
+            </div>
+
+            <div class="prayer-list-compact">
+                <div class="prayer-item-compact">
+                    <span class="prayer-label-compact">Fajr</span>
+                    <span id="fajr" class="prayer-time-compact"></span>
+                </div>
+                <div class="prayer-item-compact">
+                    <span class="prayer-label-compact">Dhuhr</span>
+                    <span id="dhuhr" class="prayer-time-compact"></span>
+                </div>
+                <div class="prayer-item-compact">
+                    <span class="prayer-label-compact">Asr</span>
+                    <span id="asr" class="prayer-time-compact"></span>
+                </div>
+                <div class="prayer-item-compact">
+                    <span class="prayer-label-compact">Maghrib</span>
+                    <span id="maghrib" class="prayer-time-compact"></span>
+                </div>
+                <div class="prayer-item-compact">
+                    <span class="prayer-label-compact">Isha</span>
+                    <span id="isha" class="prayer-time-compact"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
